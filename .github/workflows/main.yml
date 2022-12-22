@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   noti_url: https://api-lmapp.lingman.tech/api/Public/publish
@@ -26,7 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-    
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
 
       - name: Set node version to ${{ matrix.node }}
         uses: actions/setup-node@v3
@@ -35,10 +36,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install
-        run: npm install
+        run: pnpm i
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: Publish
         run: npm publish --registry https://registry.npmjs.org
