@@ -1,13 +1,12 @@
 {
   "name": "lingman-hexo-admin",
-  "version": "2.3.16",
+  "version": "2.3.17",
   "description": "Adds an admin section to the hexo server",
   "packageManager": "pnpm@7.18.1",
   "main": "index.js",
   "scripts": {
     "prepublish": "gulp build",
-    "release": "bumpp --commit --push --all --tag",
-    "build": "tsc"
+    "release": "bumpp --commit --push --all --tag"
   },
   "repository": {
     "type": "git",

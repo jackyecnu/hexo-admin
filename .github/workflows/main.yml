@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   noti_url: https://api-lmapp.lingman.tech/api/Public/publish
@@ -36,10 +36,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install
-        run: pnpm i
-
-      - name: Build
-        run: pnpm build
+        run: pnpm i 
 
       - name: Publish
         run: npm publish --registry https://registry.npmjs.org
